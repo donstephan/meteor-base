@@ -34,7 +34,7 @@ jobs:
         run: |
           GITHUB_REF=${{ github.ref }}
           VERSION=${GITHUB_REF#refs/tags/v}
-          echo "version='$VERSION'"" >> $GITHUB_OUTPUT
+          echo "version='$VERSION'" >> $GITHUB_OUTPUT
 
       - name: Build and push Docker image
         id: push

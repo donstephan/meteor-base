@@ -32,7 +32,7 @@ jobs:
       - name: Strip the v prefix from the tag
         id: meta
         run: |
-          VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
+          VERSION=${GITHUB_REF#refs/tags/v}
           echo "version='$VERSION'"" >> $GITHUB_OUTPUT
 
       - name: Build and push Docker image
